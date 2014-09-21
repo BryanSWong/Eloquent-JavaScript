@@ -37,10 +37,19 @@ function Vector(x,y){
 
 Vector.prototype.plus = function(vector){
 
-    console.log("Vector{x:", (vector.x )+ ", y: " + vector.y + "}");
+    vector.x = this.x + vector.x;
+    vector.y = this.y + vector.y;
+
+    return console.log("Vector{x: "+ vector.x +", y: " + vector.y+"}");
+
 };
 
 Vector.prototype.minus = function(vector){
+
+    vector.x = this.x - vector.x;
+    vector.y = this.y - vector.y;
+
+    return console.log("Vector{x: "+ vector.x +", y: " + vector.y+"}");
 
 };
 
@@ -55,7 +64,7 @@ Object.defineProperty(Vector.prototype, "length", {
 
 console.log(new Vector(1, 2).plus(new Vector(2, 3)));
 // → Vector{x: 3, y: 5}
-//console.log(new Vector(1, 2).minus(new Vector(2, 3)));
+console.log(new Vector(1, 2).minus(new Vector(2, 3)));
 // → Vector{x: -1, y: -1}
 console.log(new Vector(3, 4).length);
 // → 5
