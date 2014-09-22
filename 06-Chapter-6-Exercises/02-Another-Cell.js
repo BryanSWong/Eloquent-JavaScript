@@ -24,9 +24,24 @@
 
  */
 
-function StretchCell(){
+function StretchCell(inner, width, height){
 
 }
+// StretchCell minWidth prototype
+StretchCell.prototype.minWidth = function() {
+
+};
+// StretchCell minHeight prototype
+StretchCell.prototype.minHeight = function() {
+
+
+};
+
+// StretchCell draw prototype
+StretchCell.prototype.draw = function() {
+
+
+};
 
 
 function TextCell(text){
@@ -34,8 +49,8 @@ function TextCell(text){
 
 }
 
-
 var sc = new StretchCell(new TextCell("abc"), 1, 2);
+
 console.log(sc.minWidth());
 // → 3
 console.log(sc.minHeight());
