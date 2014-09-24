@@ -26,20 +26,27 @@
 
 function StretchCell(inner, width, height){
 
+    this.inner = inner;
+    this.width = width;
+    this.height = height;
 }
+
 // StretchCell minWidth prototype
 StretchCell.prototype.minWidth = function() {
+
+    return Math.max(this.inner.text.length, this.width);
 
 };
 // StretchCell minHeight prototype
 StretchCell.prototype.minHeight = function() {
 
-
+    return this.height;
 };
 
 // StretchCell draw prototype
-StretchCell.prototype.draw = function() {
+StretchCell.prototype.draw = function(width, height) {
 
+    return this.inner.draw(width, height).concat(repeat(" ", width));
 
 };
 
@@ -47,6 +54,23 @@ StretchCell.prototype.draw = function() {
 function TextCell(text){
     this.text = text;
 
+}
+
+TextCell.prototype.draw = function(width, height){
+    var result = [];
+    for(var i=0; i < height; i++){
+        var line = this.text || "";
+        result.push(line);
+    }
+    return result;
+};
+
+
+function repeat(string, times){
+    var result = "";
+    for(var j =0; j < times; j++)
+    result += string;
+    return result;
 }
 
 var sc = new StretchCell(new TextCell("abc"), 1, 2);
