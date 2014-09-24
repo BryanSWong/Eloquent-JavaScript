@@ -34,13 +34,13 @@ function StretchCell(inner, width, height){
 // StretchCell minWidth prototype
 StretchCell.prototype.minWidth = function() {
 
-    return Math.max(this.inner.text.length, this.width);
+    return Math.max(this.inner.minWidth(), this.width);
 
 };
 // StretchCell minHeight prototype
 StretchCell.prototype.minHeight = function() {
 
-    return this.height;
+    return Math.max(this.height, this.inner.minHeight());
 };
 
 // StretchCell draw prototype
@@ -56,12 +56,22 @@ function TextCell(text){
 
 }
 
-TextCell.prototype.draw = function(width, height){
+TextCell.prototype.minWidth = function(){
+
+  return this.text.length;
+};
+
+TextCell.prototype.minHeight = function(){
+
+    return 1;
+};
+
+TextCell.prototype.draw = function(){
+
     var result = [];
-    for(var i=0; i < height; i++){
-        var line = this.text || "";
-        result.push(line);
-    }
+
+    result.push(this.text);
+
     return result;
 };
 
