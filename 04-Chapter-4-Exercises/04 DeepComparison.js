@@ -40,7 +40,6 @@ function deepEqual(objOrVal1, objOrVal2){
         }
 
     }
-
 }
 
 var obj = {here: {is: "an"}, object: 2};

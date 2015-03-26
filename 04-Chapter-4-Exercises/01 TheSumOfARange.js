@@ -46,11 +46,7 @@ function sum(arr){
         total+=arr[i];
     }
 
-
-
-
     return total;
-
 }
 
 function range2(start, end, step) {
@@ -59,7 +55,7 @@ function range2(start, end, step) {
         step = 1;
     }
 
-    if(start > end && step == undefined){
+    if (start > end && step == undefined) {
         step = -1;
     }
 
@@ -68,15 +64,15 @@ function range2(start, end, step) {
     if (step > 0) {
 
 
-    for (var i = start; i <= end; i += step) {
-        myArray.push(i);
-    }
+        for (var i = start; i <= end; i += step) {
+            myArray.push(i);
+        }
 
     }
 
-    else{
+    else {
 
-        for(var j = start; j >= end; j+= step){
+        for (var j = start; j >= end; j += step) {
             myArray.push(j);
         }
 
@@ -84,18 +80,15 @@ function range2(start, end, step) {
     }
 
     return myArray;
-
 }
-
-
 
 console.log(sum(range(1, 10)));
 // → 55
-console.log(range2(1,10,2));
+console.log(range2(1, 10, 2));
 // → [1, 3, 5, 7, 9]
 console.log(range2(5, 2, -1));
 // → [5, 4, 3, 2]
-console.log(range2(5,2));
+console.log(range2(5, 2));
 // → [5, 4, 3, 2]
-console.log(range2(10,2, -2));
+console.log(range2(10, 2, -2));
 // → [10 , 8, 6, 4 , 2]

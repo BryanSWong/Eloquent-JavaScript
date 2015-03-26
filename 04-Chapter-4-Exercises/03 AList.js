@@ -54,8 +54,8 @@ function arrayToList(arr){
     for(var i = arr.length-2; i >= 0; i--){
 
         list = {value: arr[i], rest: list};
-
     }
+
     return list;
 }
 
@@ -67,11 +67,9 @@ function listToArray(list){
     for(node = list; node; node = node.rest) {
 
         myArray.push(node.value);
-
     }
 
     return myArray;
-
 }
 
 
@@ -92,8 +90,6 @@ function nth(list, num){
         }
         index++;
     }
-
-
 }
 
 
