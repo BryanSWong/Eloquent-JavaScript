@@ -25,14 +25,17 @@ function primitiveMultiply(a,b){
 }
 
 function reliableMultiply(a, b) {
-
-    for (; ;) {
+    //your code here
+    //this for loop will not break till an result is returned.
+    for (;;){
 
         try {
-            return primitiveMultiply(a, b);
-        } catch (error) {
 
-            throw error;
+            return primitiveMultiply(a, b);
+
+        } catch (error) {
+            //throw error; //if I do nothing with catch it continues till primitiveMultiply function works
+            // then returns the result of primitiveMultiply function.
         }
     }
 }

@@ -93,9 +93,6 @@ function nth(list, num){
 }
 
 
-
-
-
 console.log(arrayToList([1,2,3]));
 // → {value: 1, rest: {value: 2, rest: {value: 3, rest: null } } }
 console.log(arrayToList([10, 20]));
