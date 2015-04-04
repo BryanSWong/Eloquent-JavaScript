@@ -41,7 +41,6 @@ function withBoxUnlocked(body){
     // Check if the box is locked.
     if(lockBox == true){
         box.unlock(); // If the box is locked then unlock it.
-        //console.log("This is the first console check for box is locked or not: " + box.locked);
     }
 
     // current start of try
@@ -49,15 +48,12 @@ function withBoxUnlocked(body){
         return body();
 
     } catch(error){
-        //throw error; //with this expression the error will show up so I left it out or catch to do nothing.
-
+        //throw error; //with this expression the error will show up, commenting it out it does nothing.
     }
     // close the box if its still open at this point.
     finally{
         if(lockBox == false){
             box.lock(); // locks the box
-            //console.log("This is the console in the finally section of code: " + box.locked);
-            //console.log(box._content);
         }
 
     }
