@@ -34,8 +34,10 @@ function reliableMultiply(a, b) {
             return primitiveMultiply(a, b);
 
         } catch (error) {
-            //throw error; //if I do nothing with catch it continues till primitiveMultiply function works
-            // then returns the result of primitiveMultiply function.
+            //
+            if(!(error instanceof MultiplicatorUnitFailure)){
+                throw error;
+            }
         }
     }
 }
