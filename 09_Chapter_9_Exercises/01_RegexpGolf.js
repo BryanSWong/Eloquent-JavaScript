@@ -37,7 +37,7 @@ verify(/(\w+)ious\b/,
     ["how delicious", "spacious room"],
     ["ruinous", "consciousness"]);
 
-verify(/\W[.,:;]/,
+verify(/\s[.,:;]/,
     ["bad punctuation ."],
     ["escape the dot"]);
 
@@ -45,7 +45,7 @@ verify(/^\w{7}/,
     ["hottentottententen"],
     ["no", "hotten totten tenten"]);
 
-verify(/\d/,
+verify(/\b[(a-d)(f-z)]+\b/,
     ["red platypus", "wobbling nest"],
     ["earth bed", "learning ape"]);
 
